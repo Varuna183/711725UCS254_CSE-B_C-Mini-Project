@@ -9,7 +9,9 @@ struct clientData
     unsigned int acctNum; // account number
     char lastName[15];    // account last name
     char firstName[10];   // account first name
-    double balance;       // account balance
+    double balance;  // account balance
+    char address[50]; // address
+    char accountType[15]; // account type
 };                        // end structure clientData
 
 // prototypes
@@ -164,6 +166,9 @@ void deleteRecord(FILE *fPtr)
         // replace existing record with blank record
         fwrite(&blankClient, sizeof(struct clientData), 1, fPtr);
     } // end else
+    printf("Enter lastname firstname balance address account: \n");
+    scanf("%14s%9s%lf%49s%14s",client.lastName,client.firstName,&client.balance,client.address,client.accountType);
+      
 } // end function deleteRecord
 
 // create and insert record
